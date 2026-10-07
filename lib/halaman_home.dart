@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'halaman_menu.dart';
+import 'halaman_tambah_akun.dart';
+import 'halaman_tambah_buku.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -14,54 +16,70 @@ class HomePage extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Container(
-              padding: EdgeInsets.all(20),
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-            child: Row(
-              children: [
-                Icon(Icons.add_circle, size: 50, color: Colors.blue),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Tambah Akun", style: TextStyle(fontSize: 24)),
-                      Text("Tambahkan Akun"),
-                    ],
-                  ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TambahAkunPage()),
+                );
+              },
+              child: Container(
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                Icon(Icons.arrow_forward_ios, size: 20),
-              ],
-            ),
-            ),
-            Container(
-              padding: EdgeInsets.all(20),
-              margin: EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-            child: Row(
-              children: [
-                Icon(Icons.book, size: 50, color: Colors.blue),
-                SizedBox(width: 10),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text("Tambah Buku", style: TextStyle(fontSize: 24)),
-                      Text("Tambahkan Buku"),
-                    ],
+              child: Row(
+                children: [
+                  Icon(Icons.add_circle, size: 50, color: Colors.blue),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Tambah Akun", style: TextStyle(fontSize: 24)),
+                        Text("Tambahkan Akun"),
+                      ],
+                    ),
                   ),
+                  Icon(Icons.arrow_forward_ios, size: 20),
+                ],
+              ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TambahBukuPage()),
+                );
+              },
+              child: Container(
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.grey),
+                  borderRadius: BorderRadius.circular(10),
                 ),
-                Icon(Icons.arrow_forward_ios, size: 20),
-              ],
-            ),
-            ),
+              child: Row(
+                children: [
+                  Icon(Icons.book, size: 50, color: Colors.blue),
+                  SizedBox(width: 10),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("Tambah Buku", style: TextStyle(fontSize: 24)),
+                        Text("Tambahkan Buku"),
+                      ],
+                    ),
+                  ),
+                  Icon(Icons.arrow_forward_ios, size: 20),
+                ],
+              ),
+              ),
+            ),  
             SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
